@@ -77,6 +77,12 @@ def test_result():
         return(render_template("fail.html"))
 
 
+## investor test
+@app.route("/investor_test", methods=["GET", "POST"])
+def investor_test():
+    return render_template("investor_test.html")
+
+
 ## FAQ
 @app.route("/FAQ", methods=["GET", "POST"])
 def FAQ():
