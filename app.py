@@ -4,6 +4,8 @@ import datetime
 import google.generativeai as genai
 import os # remove the api, then go to the render
 import wikipedia
+import time
+import requests
 
 # Flask no need to beautify, Flask-markup is used to beautify
 
@@ -13,6 +15,12 @@ flag = 1
 api = os.getenv("makersuite")
 model = genai.GenerativeModel("gemini-1.5-flash")
 genai.configure(api_key=api)
+
+
+# telegram chatbot
+#TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+#TOKEN = "8079284914:AAFxER0JcKFr7JbRBgRWXLgn-NkkI-hitMs"
+#BASE_URL = f'https://api.telegram.org/bot{TOKEN}/'
 
 
 ## index
@@ -129,6 +137,11 @@ def deleteLog():
     conn.close()
 
     return(render_template("deleteLog.html"))
+
+## telegram
+@app.route("/telegram", methods=["GET", "POST"])
+def telegram():
+    return render_template("telegram.html")
 
 
 if __name__ == "__main__":
