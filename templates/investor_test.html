@@ -32,7 +32,7 @@
         .btn {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #4CAF50;
+            background-color: #4eb8ea;
             color: white;
             border: none;
             border-radius: 6px;
@@ -42,7 +42,7 @@
         }
 
         .btn:hover {
-            background-color: #45a049;
+            background-color: #4eb8ea;
         }
 
         #result {
@@ -56,35 +56,35 @@
 
 <body>
     <div class="container">
-        <h2>Investor Type Quiz</h2>
+        <h2>Investor Type Quiz</h2><br>
 
         <div class="question">
             <p>1. How do you feel about market fluctuations?</p>
             <input type="radio" name="q1" value="1"> I prefer stability and predictability<br>
             <input type="radio" name="q1" value="2"> A mix is acceptable<br>
             <input type="radio" name="q1" value="3"> I’m comfortable with big ups and downs<br>
-        </div>
+        </div><br>
 
         <div class="question">
             <p>2. What’s your investment time horizon?</p>
             <input type="radio" name="q2" value="1"> Less than 3 years<br>
             <input type="radio" name="q2" value="2"> 3 to 7 years<br>
             <input type="radio" name="q2" value="3"> More than 7 years<br>
-        </div>
+        </div><br>
 
         <div class="question">
             <p>3. What would you do if your investment drops by 15% in a month?</p>
             <input type="radio" name="q3" value="1"> Sell to prevent further losses<br>
             <input type="radio" name="q3" value="2"> Hold and wait<br>
             <input type="radio" name="q3" value="3"> Buy more while prices are low<br>
-        </div>
+        </div><br>
 
         <div class="question">
             <p>4. What is your primary investment goal?</p>
             <input type="radio" name="q4" value="1"> Preserve capital<br>
             <input type="radio" name="q4" value="2"> Moderate growth<br>
             <input type="radio" name="q4" value="3"> Maximize returns<br>
-        </div>
+        </div><br>
 
         <div style="text-align: center;">
             <button class="btn" onclick="calculateScore()">Submit</button>
@@ -110,17 +110,17 @@
             }
 
             if (!allAnswered) {
-                alert("Oops! You missed a question. Please answer all questions before submitting.");
+                alert("Oops! You missed some questions. Please answer all questions before submitting.");
                 return;
             }
 
             let resultText = "";
             if (score <= 5) {
-                resultText = "Your investor type is: Conservative";
+                resultText = "Your investor type is: 👨‍💻Conservative";
             } else if (score <= 8) {
-                resultText = "Your investor type is: Balanced";
+                resultText = "Your investor type is: 🤵Balanced";
             } else {
-                resultText = "Your investor type is: Aggressive";
+                resultText = "Your investor type is: 🏃Aggressive";
             }
 
             document.getElementById("result").innerText = resultText + " (Score: " + score + ")";
