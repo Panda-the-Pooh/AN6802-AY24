@@ -16,11 +16,10 @@ api = os.getenv("makersuite")
 model = genai.GenerativeModel("gemini-1.5-flash")
 genai.configure(api_key=api)
 
-
 # telegram chatbot
 #TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
-#TOKEN = "8079284914:AAFxER0JcKFr7JbRBgRWXLgn-NkkI-hitMs"
-#BASE_URL = f'https://api.telegram.org/bot{TOKEN}/'
+TOKEN = "8079284914:AAFxER0JcKFr7JbRBgRWXLgn-NkkI-hitMs"
+BASE_URL = f'https://api.telegram.org/bot{TOKEN}/'
 
 
 ## index
@@ -144,6 +143,5 @@ def telegram():
     return render_template("telegram.html")
 
 
-if __name__ == "__main__":
-    app.run()
-
+if __name__ == '__main__':
+    app.run(debug=True)
